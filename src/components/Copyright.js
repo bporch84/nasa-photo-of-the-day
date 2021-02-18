@@ -1,11 +1,16 @@
 import React from "react"
 import "../App.css";
+import styled from "styled-components"
+
+const StyledCopyright = styled.div`
+color: #fc3d21;
+`
 
 const Copyright = (props) => {
     return(
-        <div>
+        <StyledCopyright>
             <h3>{props.copyright}</h3>
-        </div>
+        </StyledCopyright>
     )
 }
 
