@@ -1,6 +1,28 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
 import axios from "axios"
+import styled from "styled-components"
+
+const StyledPhoto = styled.div`
+text-align: center;
+
+ img{
+   border-radius: 5%;
+   filter: grayscale(5%);
+
+   &:hover{
+     border-radius: 100%;
+     filter: grayscale(100%);
+     transform: scale(-1);
+   }
+ }
+
+p{
+  color: maroon;
+  font-size: 20px;
+  width: 65%;
+  margin: 20px auto;
+}
+`
 
 const PhotoComponent = () => {
 const [photo, setPhoto] = useState({});
@@ -17,10 +39,10 @@ const [photo, setPhoto] = useState({});
         }, [])
 
 return (
-<div className="container">
+<StyledPhoto className="container">
      <img src={photo.url} alt=""/>  
         <p>{photo.explanation}</p> 
-</div>
+</StyledPhoto>
 )
 }
 
